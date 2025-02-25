@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI3C - Artificial Intelligence Centre for Chifa and Conseil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #0056b3;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .chatbot {
+      display: inline-block;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .consultation-form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #0056b3;
+      color: white;
+      margin-top: 50px;
+    }
+
+    .about-us, .contact-support, .blog-health-tips {
+      margin-top: 40px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-dashboard {
+      margin-top: 40px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-dashboard ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .user-dashboard li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI3C - Artificial Intelligence Centre for Chifa and Conseil</h1>
+    <p>Empowering Health with AI</p>
+  </header>
+
+  <div class="container">
+    <section class="hero-section">
+      <h2>Welcome to AI3C</h2>
+      <p>Get instant health advice, book consultations, and access personalized reports.</p>
+      <button id="startConsultation">Start Consultation</button>
+      <div class="chatbot">
+        <p>Chat with our AI-driven assistant:</p>
+        <input type="text" id="chatInput" placeholder="Enter your symptoms..." />
+        <button id="sendChat">Send</button>
+      </div>
+    </section>
+
+    <section class="consultation-form">
+      <h3>AI Health Consultation</h3>
+      <form id="healthForm">
+        <label for="symptoms">Enter Symptoms:</label><br>
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Get Diagnosis</button>
+      </form>
+      <p>Book a live consultation with a doctor for only 49 DH.</p>
+    </section>
+
+    <section class="user-dashboard">
+      <h3>User Dashboard</h3>
+      <ul>
+        <li><strong>Profile Management:</strong> Update your age, medical history, and personal information.</li>
+        <li><strong>Consultation History:</strong> View all previous consultations and download detailed reports.</li>
+        <li><strong>Subscription Options:</strong> Access premium services for advanced features and unlimited consultations.</li>
+      </ul>
+    </section>
+
+    <section class="about-us">
+      <h3>About Us</h3>
+      <p>AI3C is dedicated to providing smart health consultations using cutting-edge AI technology. Our mission is to make healthcare accessible, affordable, and efficient for everyone. We partner with leading doctors and specialists to ensure the highest quality of care.</p>
+    </section>
+
+    <section class="contact-support">
+      <h3>Contact & Support</h3>
+      <p>Need help? Reach out to us via live chat, email, or check our FAQ section.</p>
+      <button onclick="alert('Live chat initiated')">Live Chat</button>
+      <p>Email: support@ai3c.com</p>
+    </section>
+
+    <section class="blog-health-tips">
+      <h3>Blog & Health Tips</h3>
+      <p>Explore our AI-generated articles on health, wellness, and medical research.</p>
+      <a href="#" onclick="alert('Blog page coming soon')">View Articles</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 AI3C. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('startConsultation').addEventListener('click', () => {
+      alert('Starting your consultation...');
+    });
+
+    document.getElementById('sendChat').addEventListener('click', () => {
+      const input = document.getElementById('chatInput').value;
+      if (input.trim() !== '') {
+        alert(`You said: ${input}`);
+        document.getElementById('chatInput').value = '';
+      } else {
+        alert('Please enter a message.');
+      }
+    });
+
+    document.getElementById('healthForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const symptoms = document.getElementById('symptoms').value;
+      if (symptoms.trim() !== '') {
+        alert(`AI Analysis: Based on your symptoms, here is some advice...`);
+        document.getElementById('symptoms').value = '';
+      } else {
+        alert('Please describe your symptoms.');
+      }
+    });
+  </script>
+</body>
+</html>
